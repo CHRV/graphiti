@@ -1,12 +1,25 @@
+[build-system]
+build-backend = "hatchling.build"
+
+requires = [ "hatchling" ]
+
 [project]
 name = "mcp-server"
 version = "0.1.0"
 description = "Graphiti MCP Server"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = [
-    "mcp>=1.5.0",
-    "openai>=1.68.2",
-    "graphiti-core>=0.8.2",
-    "azure-identity>=1.21.0",
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
 ]
+dependencies = [
+  "azure-identity>=1.21",
+  "graphiti-core>=0.8.2",
+  "mcp>=1.5",
+  "openai>=1.68.2",
+]
+packages = [ { include = "mcp_server", from = "." } ]
